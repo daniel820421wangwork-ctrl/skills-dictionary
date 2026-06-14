@@ -4,7 +4,9 @@
 
 ## 🔗 線上使用
 
-**https://daniel820421wangwork-ctrl.github.io/skills-dictionary/**
+- **線上版（GitHub Pages）：** https://daniel820421wangwork-ctrl.github.io/skills-dictionary/
+- **網站進入點：** [`web/index.html`](web/index.html)
+  （在 GitHub 上點此會看到原始檔；要實際使用請開上面的線上版，或在本機開這個檔。）
 
 ## 這個網站能做什麼
 
