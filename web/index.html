@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill 字典 · Claude &amp; Codex 技能總覽</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="logo">📚</span>
+      <div>
+        <h1>Skill 字典</h1>
+        <p class="tagline">網路上公開發布的 Agent Skills 總覽 · 用問的就能找到你要的 skill</p>
+      </div>
+    </div>
+    <div class="header-tools">
+      <div class="text-size" role="group" aria-label="文字大小">
+        <button id="fs-dec" class="fs-btn" type="button" aria-label="縮小文字">A−</button>
+        <span id="fs-label" class="fs-label" title="目前文字大小">100%</span>
+        <button id="fs-inc" class="fs-btn" type="button" aria-label="放大文字">A+</button>
+        <button id="fs-reset" class="fs-btn fs-reset" type="button" aria-label="重設文字大小" title="重設">↺</button>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 對話式搜尋 -->
+  <section class="chat-panel">
+    <h2 class="panel-title">💬 對話式搜尋</h2>
+    <p class="panel-sub">用自然語言描述你想做的事，例如「我要做使用者登入」「串接 Stripe 金流」「部署到 Cloudflare」「爬網頁資料」。</p>
+    <form id="chat-form" class="chat-form" autocomplete="off">
+      <input id="chat-input" class="chat-input" type="text"
+             placeholder="輸入你想完成的任務…" aria-label="對話式搜尋">
+      <button class="chat-send" type="submit">搜尋</button>
+    </form>
+    <div class="chip-row" id="suggest-chips"></div>
+    <div id="chat-answer" class="chat-answer" hidden></div>
+  </section>
+
+  <!-- 篩選列 -->
+  <section class="filters">
+    <div class="filter-search">
+      <input id="keyword" type="search" placeholder="🔍 關鍵字過濾（名稱、描述、標籤）…" aria-label="關鍵字過濾">
+    </div>
+    <div class="filter-group" id="eco-filter" role="group" aria-label="來源篩選"></div>
+    <div class="filter-group" id="bl-controls" role="group" aria-label="黑名單"></div>
+    <div class="filter-group tag-filter" id="tag-filter" role="group" aria-label="標籤篩選"></div>
+  </section>
+
+  <p class="result-count" id="result-count"></p>
+
+  <!-- 卡片網格 -->
+  <section class="grid" id="grid"></section>
+  <p class="empty" id="empty" hidden>找不到符合條件的 skill，試試別的關鍵字或清除篩選。</p>
+</main>
+
+<!-- 黑名單管理 modal -->
+<div class="modal-backdrop" id="bl-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="bl-title">
+    <button class="modal-close" id="bl-close" aria-label="關閉">✕</button>
+    <div id="bl-body"></div>
+  </div>
+</div>
+
+<!-- 詳細頁 modal -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="modal-close" id="modal-close" aria-label="關閉">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>共收錄 <strong id="foot-count"></strong> 個公開 skill ·
+       資料來源：<a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>（官方＋社群精選）·
+       由 Skill 字典自動彙整</p>
+    <p class="foot-actions">
+      <button id="reset-data" class="reset-btn" type="button">↺ 重設本機資料</button>
+      <span id="db-status" class="db-status"></span>
+    </p>
+  </div>
+</footer>
+
+<script src="data/skills.js"></script>
+<script src="data/blacklist.js"></script>
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

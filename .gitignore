@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 建置中間檔（可由 scripts 重新產生；網站實際用的是 web/data/skills.js）
+scripts/volt_readme.md
+scripts/volt_skills.json
+scripts/curated_raw.json
+scripts/skills_raw.json
+
+# Node (not used; stray tooling files)
+node_modules/
+package-lock.json
