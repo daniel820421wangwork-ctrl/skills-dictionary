@@ -29,6 +29,12 @@
 </header>
 
 <main class="wrap">
+  <!-- 類型切換：Skill / MCP -->
+  <div class="mode-tabs" id="mode-tabs" role="tablist" aria-label="資料類型">
+    <button class="mode-tab active" id="mode-skill" type="button" role="tab" aria-selected="true">📚 Skills</button>
+    <button class="mode-tab" id="mode-mcp" type="button" role="tab" aria-selected="false">🔌 MCP 伺服器</button>
+  </div>
+
   <!-- 對話式搜尋 -->
   <section class="chat-panel">
     <h2 class="panel-title">💬 對話式搜尋</h2>
@@ -77,9 +83,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>共收錄 <strong id="foot-count"></strong> 個公開 skill ·
-       資料來源：<a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>（官方＋社群精選）·
-       由 Skill 字典自動彙整</p>
+    <p id="foot-source"></p>
     <p class="foot-actions">
       <button id="reset-data" class="reset-btn" type="button">↺ 重設本機資料</button>
       <span id="db-status" class="db-status"></span>
@@ -88,7 +92,9 @@
 </footer>
 
 <script src="data/skills.js"></script>
+<script src="data/mcps.js"></script>
 <script src="data/blacklist.js"></script>
+<script src="data/mcp_blacklist.js"></script>
 <script src="db.js"></script>
 <script src="app.js"></script>
 </body>

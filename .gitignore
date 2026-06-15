@@ -11,6 +11,9 @@ scripts/volt_readme.md
 scripts/volt_skills.json
 scripts/curated_raw.json
 scripts/skills_raw.json
+scripts/mcp_awesome_readme.md
+scripts/mcp_official_readme.md
+scripts/mcp_servers.json
 
 # Node (not used; stray tooling files)
 node_modules/
